@@ -1,7 +1,7 @@
 '''
 There are presented different parsing functions to work with wod_bot.py
-Each function parses text.data from prepeared url links of 'word of a day' and 'english-russian translator' websites.
-Then drops useless data from html and prepeare text information for exporting in word_bot for Telegram bot uses.
+Each function parses text.data from prepared url links of 'word of a day' and 'english-russian translator' websites.
+Then drops useless data from html and prepare text information for exporting in word_bot for Telegram bot uses.
 '''
 
 
