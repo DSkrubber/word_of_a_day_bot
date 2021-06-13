@@ -10,6 +10,7 @@ bot.
 """
 
 
+from os import environ
 import logging
 import time
 import datetime
@@ -23,6 +24,10 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
 )
 logger = logging.getLogger(__name__)
+
+
+# Temporary passing of environ variable
+TOKEN = environ.get('TO_BOTFATHER')
 
 
 # Define a few command handlers. These usually take the two arguments update and
@@ -153,7 +158,7 @@ def translate(update: Update, _: CallbackContext) -> None:
 def main() -> None:
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
-    updater = Updater("1805457445:AAHHL9itZY935yva4Ir7rYOVzVO-BUinWSI")
+    updater = Updater(TOKEN)
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher

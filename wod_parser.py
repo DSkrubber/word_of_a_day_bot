@@ -26,7 +26,16 @@ def request_wod():
     start_defin = text.find('</strong>', text.find('<!--mid-->', start_head)) + len('</strong>')
     stop_defin = text.find('</p>', start_defin)
     definition = text[start_defin: stop_defin].capitalize()
-    return word, definition
+    a = b = 0
+    while '<' in definition:
+        for index, symb in enumerate(definition):
+            if symb == '<':
+                a = index
+            elif symb == '>':
+                b = index + 1
+                definition = definition[:a] + definition[b:]
+                break
+    return word, definition.strip()
 
 
 # Alternative source with obscene words filter.
