@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 
 # Temporary passing of environ variable
-TOKEN = environ.get('TO_BOTFATHER')
+TOKEN = environ.get('TO_BOTFATHER', None)
 
 
 # Define a few command handlers. These usually take the two arguments update and
@@ -158,7 +158,7 @@ def translate(update: Update, _: CallbackContext) -> None:
 def main() -> None:
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
-    updater = Updater(TOKEN)
+    updater = Updater(TOKEN)    # Replace TOKEN if needed.
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
